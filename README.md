@@ -34,7 +34,3 @@ MAIL_FROM=no-reply@example.com
 ## Estructura
 - `app/` — Modelos, Controladores, Vistas
 - `public/` — Punto de entrada (index.php)
-
-## Entrega
-- Sube todo al repositorio GitHub excepto `vendor/` y `.env`.
-- Incluye en el README instrucciones para ejecutar `composer install`.
