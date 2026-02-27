@@ -1,4 +1,4 @@
-# Taller PHP Avanzado - Proyecto listo
+# Taller PHP Avanzado - Proyecto (Funcional)
 
 ## Requisitos
 - PHP 8+
