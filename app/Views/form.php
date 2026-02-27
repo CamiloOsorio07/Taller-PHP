@@ -126,7 +126,6 @@
                 <h5>Análisis de datos</h5>
                 <form method="POST" action="index.php">
                     <input type="hidden" name="action" value="calcular">
-                    <p class="small text-muted">Los datos de ejemplo se usarán para el análisis.</p>
                     <button class="btn btn-outline-lime w-100">Ejecutar análisis</button>
                 </form>
             </div>

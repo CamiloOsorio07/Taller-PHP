@@ -12,7 +12,6 @@ use Symfony\Component\Mime\Email;
 
 class MainController {
 
-    // Procesa el formulario de interés / salario
     public function procesarFormulario($data) {
         $calculadora = new Calculadora();
 
@@ -24,7 +23,6 @@ class MainController {
         $interes = $calculadora->interesCompuesto($capital, $tasa, $tiempo);
         $neto = $calculadora->salarioNeto($salario);
 
-        // Datos de ejemplo para listas
         $estudiantesRaw = $this->datosEjemploEstudiantes();
         $enviosRaw = $this->datosEjemploEnvios();
 
@@ -41,7 +39,6 @@ class MainController {
         ];
     }
 
-    // Datos de ejemplo - Estudiantes
     private function datosEjemploEstudiantes() {
         return [
             ['nombre' => 'Ana', 'calificacion' => 4.2, 'carrera' => 'Ingenieria'],
@@ -53,7 +50,6 @@ class MainController {
         ];
     }
 
-    // Datos de ejemplo - Envios
     private function datosEjemploEnvios() {
         return [
             ['id' => 1, 'ciudad' => 'Bogota', 'transportista' => 'TransA', 'peso' => 10, 'costoKilo' => 5, 'estado' => 'Entregado'],
@@ -64,7 +60,6 @@ class MainController {
         ];
     }
 
-    // Analiza estudiantes
     public function analizarEstudiantesArray(array $estudiantes) {
         $suma = [];
         $conteo = [];
@@ -101,7 +96,6 @@ class MainController {
         ];
     }
 
-    // Analiza envios
     public function analizarEnviosArray(array $envios) {
         $costoTotalEntregados = 0;
         $pesoPorCiudad = [];
@@ -134,7 +128,6 @@ class MainController {
         ];
     }
 
-    // Generar PDF
     public function generarPdf($html) {
         $dompdf = new Dompdf();
         $dompdf->loadHtml($html);
@@ -144,9 +137,7 @@ class MainController {
         exit;
     }
 
-    // Enviar email
     public function enviarEmail($to, $subject, $body) {
-        // Intentar obtener configuración de múltiples fuentes
         $dsn = getenv('MAILER_DSN') 
             ?? ($_ENV['MAILER_DSN'] ?? null)
             ?? ($_SERVER['MAILER_DSN'] ?? null);
